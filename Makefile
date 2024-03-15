@@ -1,9 +1,10 @@
 CFLAGS = -Wall -Wextra -std=gnu11 -Og -g
-LDFLAGS = -L/opt/phytec-yogurt-vendor-xwayland/BSP-Yocto-FSL-i.MX8MP-PD21.1.3/sysroots/aarch64-phytec-linux/usr/lib
+LDFLAGS = -L/opt/ampliphy-vendor-xwayland/BSP-Yocto-NXP-i.MX8MP-PD23.1.0/sysroots/cortexa53-crypto-phytec-linux/usr/lib
 LDLIBS = -li2c
 BUILD_PATH=build
+PROGRAM=hello
 
 all: main.c
-	$(CC) $(CFLAGS) $(LDFLAGS) $(LDLIBS) main.c -o ${BUILD_PATH}/hello.bin
+	$(CC) $(CFLAGS) $(LDFLAGS) $(LDLIBS) main.c -o ${BUILD_PATH}/${PROGRAM}
 clean:
-	rm -f ${BUILD_PATH}/hello.bin
+	rm -f ${BUILD_PATH}/${PROGRAM}

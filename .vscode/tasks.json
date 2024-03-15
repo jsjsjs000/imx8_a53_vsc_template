@@ -43,7 +43,7 @@
 		{
 			"label": "build",
 			"type": "shell",
-			"command": "make clean; make -j$(nproc) && scp ${config:BUILD_PATH}/${config:PROGRAM} root@${config:TARGET_IP}:${config:REMOTE_DIR} && ssh root@${config:TARGET_IP} ${config:REMOTE_DIR}/${config:PROGRAM}",
+			"command": "mkdir -p ${config:BUILD_PATH}; make clean; make -j$(nproc) && scp ${config:BUILD_PATH}/${config:PROGRAM} root@${config:TARGET_IP}:${config:REMOTE_DIR} && ssh root@${config:TARGET_IP} ${config:REMOTE_DIR}/${config:PROGRAM}",
 			"problemMatcher": ["$gcc"]
 		},
 	]
